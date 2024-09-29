@@ -76,7 +76,7 @@ def GFFto4col(gff,feature,f_index,c_index,start,stop,name,truncate):
     gene_4col = gff+".gene4col"
     gff_output = open(gene_4col,'w')
     for line in gff_source:
-        if not line.startswith("#"):
+        if not line.startswith("#") and line.strip():
             split_line = line.strip().split("\t")
             if split_line[f_index-1] == feature:
                 info_dict = {}
